@@ -63,7 +63,14 @@ class School {
       print(person.introduce());
     }
   }
+  
+  int countStudents() => _people.whereType<Student>().length;
+
+  int countTeachers() => _people.whereType<Teacher>().length;
+  
 }
+
+
 
 // ---------- Input helpers ----------
 
@@ -134,6 +141,10 @@ void main() {
     print('');
   }
 
+  //print('=== School Roster ===');
+  //school.introduceAll();
+  
   print('=== School Roster ===');
-  school.introduceAll();
+  print('Total people: ${school.countStudents() + school.countTeachers()}');
+  
 }
